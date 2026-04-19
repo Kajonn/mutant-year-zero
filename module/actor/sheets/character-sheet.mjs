@@ -126,16 +126,24 @@ export class MYZCharacterSheet extends MYZActorBaseSheet{
 		event.preventDefault();
 		const itemId = target.dataset.itemId;
 		if (!itemId) return;
-		const item = this.actor.items.get(itemId);
-        if (item) {
-            await item.roll(event);
-        }
+		if (event.shiftKey) {
+			const item = this.actor.items.get(itemId);
+			if (item) await item.roll(event);
+		} else {
+			await MYZActorBaseSheet._viewDoc.call(this, event, target);
+		}
 	}
 
 	/** Armor Roll on Click */	
 	static async #onRollArmor(event, target) {
 		event.preventDefault();
-		await this.document.RollArmor(event);
+		if (event.shiftKey) {
+			await this.document.RollArmor(event);
+		} else {
+			const itemId = target.dataset.itemId;
+			if (!itemId) return;
+			await MYZActorBaseSheet._viewDoc.call(this, event, target);
+		}
 	}
 
 	/** Rot Roll on Click */	
