@@ -114,8 +114,8 @@
 	  "units": "m"
   },
   "background":"systems/mutant-year-zero/assets/img/splash-page.jpg",
-  "url": "https://github.com/superseva/mutant-year-zero",
-  "manifest": "https://github.com/superseva/mutant-year-zero/releases/latest/download/system.json",
-  "download": "https://github.com/superseva/mutant-year-zero/releases/download/v14.0.2/mutant-year-zero.zip",
+  "url": "https://github.com/Kajonn/mutant-year-zero",
+  "manifest": "https://github.com/Kajonn/mutant-year-zero/releases/latest/download/system.json",
+  "download": "https://github.com/Kajonn/mutant-year-zero/releases/download/v14.0.2/mutant-year-zero.zip",
   "license": "LICENSE"
 }
