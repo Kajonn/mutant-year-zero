@@ -19,11 +19,13 @@
     "module/myz.js"
   ],
   "styles": [
-    "css/mutant-year-zero.css"
+    "css/mutant-year-zero.css",
+    "css/hindenburg.css"
   ],
   "documentTypes": {
     "Actor":{
       "mutant":{"htmlFields": ["description", "notes"]},
+      "hindenburg":{"htmlFields": ["description", "notes"]},
       "animal":{"htmlFields": ["description", "notes"]},
       "robot":{"htmlFields": ["description", "notes"]},
       "human":{"htmlFields": ["description", "notes"]},

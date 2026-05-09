@@ -65,10 +65,6 @@ export class MYZCharacterSheet extends MYZActorBaseSheet{
 		info:{
 			template: "systems/mutant-year-zero/templates/actor/tabs/character-info.hbs",
 			scrollable: [''],
-		},
-		effects: {
-			template: "systems/mutant-year-zero/templates/actor/tabs/effects.hbs",
-			scrollable: [''],
 		}
     }
 
@@ -79,8 +75,7 @@ export class MYZCharacterSheet extends MYZActorBaseSheet{
 			tabs: [
 				{ id: "attributes", label: "MYZ.ATTRIBUTES" }, 
 				{id: "gear", label: "MYZ.GEAR"}, 
-				{id: "info", label: "MYZ.INFO"}, 
-				{id: "effects", label: "MYZ.EFFECTS"}],
+				{id: "info", label: "MYZ.INFO"}],
 			initial: "attributes", // Set the initial tab
 		},
 	};

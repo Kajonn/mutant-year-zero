@@ -6,13 +6,14 @@ export default class MYZHooks {
         // PCs should have type=mutant/animal/robot/human and ceratureType = mutant/animal/robot/human
         if(game.user.id!== userId)
             return; 
+        const normalizedCreatureType = actor.type === "hindenburg" ? "mutant" : actor.type;
         let updateData = {};
         updateData["token.disposition"] = CONST.TOKEN_DISPOSITIONS.NEUTRAL;
         updateData["token.vision"] = true;        
         if (actor.type != "npc") {
-            updateData["system.creatureType"] = actor.type;
+            updateData["system.creatureType"] = normalizedCreatureType;
             updateData["token.actorLink"] = true;
-            updateData["img"] = `systems/mutant-year-zero/assets/ico/img-${actor.type}.svg`
+            updateData["img"] = `systems/mutant-year-zero/assets/ico/img-${normalizedCreatureType}.svg`
         }
         if (actor.type == "npc") {
             if (actor.system.creatureType == "")
@@ -67,7 +68,7 @@ export default class MYZHooks {
             // Add ACTOR TYPE and CORE to each skill in _skillsList before you assign it to the actor;
             let _sl = [];
             _skillsList.forEach((s) => {                
-                s.system["creatureType"] = actor.type;
+                s.system["creatureType"] = actor.system.creatureType;
                 s.system["coreSkill"] = true;
                 _sl.push(s);
             });

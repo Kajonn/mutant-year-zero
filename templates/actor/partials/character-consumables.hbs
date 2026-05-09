@@ -5,13 +5,29 @@
     <div class="box-item flex row space-betwen align-center resource">
         <label class="item-name" for="system.resources.grub.value">{{localize "MYZ.GRUB"}}</label>
         <input class="short-input-2em" name="system.resources.grub.value" type="number" data-type="Number" min="0" data-tooltip="{{localize 'MYZ.CLEAN'}}" value="{{system.resources.grub.value}}" />
-        <input class="short-input-2em rot" name="system.resources.grubRot.value" type="number" data-type="Number" min="0" data-tooltip="<i class='fa-regular fa-biohazard'></i> {{localize 'MYZ.ROT'}}" value="{{system.resources.grubRot.value}}" />
     </div>
     <div class="box-item flex row space-betwen align-center resource">
         <label class="item-name" for="system.resources.water.value">{{localize "MYZ.WATER"}}</label>
         <input class="short-input-2em" name="system.resources.water.value" type="number" data-type="Number" min="0" data-tooltip="{{localize 'MYZ.CLEAN'}}" value="{{system.resources.water.value}}" />
-        <input class="short-input-2em rot" name="system.resources.waterRot.value" type="number" data-type="Number" min="0" data-tooltip="<i class='fa-regular fa-biohazard'></i> {{localize 'MYZ.ROT'}}" value="{{system.resources.waterRot.value}}" />
     </div>
+    {{#ifCond actor.type "==" "hindenburg"}}
+    <div class="box-item flex row space-betwen align-center resource">
+        <label class="item-name" for="system.resources.credits.value">{{localize "MYZ.CREDITS"}}</label>
+        <input class="short-input" name="system.resources.credits.value" type="number" data-type="Number" min="0" value="{{system.resources.credits.value}}" />
+    </div>
+    <div class="box-item flex row space-betwen align-center resource">
+        <label class="item-name" for="system.resources.jyckar.value">{{localize "MYZ.JYCKAR"}}</label>
+        <input class="short-input" name="system.resources.jyckar.value" type="number" data-type="Number" min="0" value="{{system.resources.jyckar.value}}" />
+    </div>
+    <div class="box-item flex row space-betwen align-center resource">
+        <label class="item-name" for="system.resources.reloads.value">{{localize "MYZ.RELOADS"}}</label>
+        <input class="short-input" name="system.resources.reloads.value" type="number" data-type="Number" min="0" value="{{system.resources.reloads.value}}" />
+    </div>
+    <div class="box-item flex row space-betwen align-center resource">
+        <label class="item-name" for="system.resources.epack.value">{{localize "MYZ.EPACK"}}</label>
+        <input class="short-input" name="system.resources.epack.value" type="number" data-type="Number" min="0" value="{{system.resources.epack.value}}" />
+    </div>
+    {{else}}
     <div class="box-item flex row space-betwen align-center resource">
         <label class="item-name" for="system.resources.bullets.value">{{localize "MYZ.BULLETS"}}</label>
         <input class="short-input" name="system.resources.bullets.value" type="number" data-type="Number" min="0" value="{{system.resources.bullets.value}}" />
@@ -20,4 +36,5 @@
         <label class="item-name" for="system.resources.booze.value">{{localize "MYZ.BOOZE"}}</label>
         <input class="short-input" name="system.resources.booze.value" type="number" data-type="Number" min="0" value="{{system.resources.booze.value}}" />
     </div>
+    {{/ifCond}}
 </div>

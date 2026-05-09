@@ -1,0 +1,96 @@
+/* ============================================================
+   HINDENBURG SHEET — PARCHMENT / SEPIA THEME
+   Targets .mutant-year-zero.hindenburg (actor type class added
+   dynamically via MYZActorBaseSheet._onFirstRender)
+   ============================================================ */
+
+/* ---- Color palette ----------------------------------------
+   --hb-header     : #6B4C32  warm sepia brown (box headers)
+   --hb-border     : #3D2B1A  dark brown (borders)
+   --hb-bg         : #F0E4C8  warm parchment (content areas)
+   --hb-bg-sheet   : #F8EED8  lighter parchment (sheet BG)
+   --hb-text-light : ghostwhite (text on dark headers)
+   --hb-text-dark  : #26211c  near-black (body text)
+   --hb-input-bg   : rgba(248,238,216,0.75)  (input fields)
+   --------------------------------------------------------- */
+
+/* Sheet window / form background */
+.mutant-year-zero.hindenburg {
+    background-color: #F8EED8;
+    color: #26211c;
+}
+
+/* ---- Box headers ----------------------------------------- */
+.mutant-year-zero.hindenburg .box-item.header.mutant {
+    background-image: none;
+    background-color: #6B4C32;
+    color: ghostwhite;
+    border-color: #3D2B1A;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+}
+
+/* ---- Box list (content rows) ----------------------------- */
+.mutant-year-zero.hindenburg .box-list.mutant {
+    background-color: #F0E4C8;
+    border-color: #3D2B1A;
+}
+
+/* ---- Row dividers ---------------------------------------- */
+.mutant-year-zero.hindenburg .box-item {
+    border-bottom-color: rgba(61, 43, 26, 0.20);
+}
+
+/* ---- Input fields ---------------------------------------- */
+.mutant-year-zero.hindenburg input:not([type="checkbox"]):not([type="radio"]) {
+    background-color: rgba(248, 238, 216, 0.75);
+    color: #26211c;
+    border: 1px solid #8B6B4A;
+}
+
+.mutant-year-zero.hindenburg select {
+    background-color: rgba(248, 238, 216, 0.85);
+    color: #26211c;
+    border: 1px solid #8B6B4A;
+}
+
+.mutant-year-zero.hindenburg textarea {
+    background-color: rgba(248, 238, 216, 0.75);
+    color: #26211c;
+    border: 1px solid #8B6B4A;
+}
+
+/* ---- Armor box in header --------------------------------- */
+.mutant-year-zero.hindenburg .armor-box {
+    border-color: #3D2B1A;
+}
+
+.mutant-year-zero.hindenburg .armor-box .shield-box {
+    color: #26211c;
+}
+
+/* ---- Tab navigation -------------------------------------- */
+.mutant-year-zero.hindenburg nav.tabs [data-tab] {
+    color: #3D2B1A;
+}
+
+.mutant-year-zero.hindenburg nav.tabs [data-tab].active,
+.mutant-year-zero.hindenburg nav.tabs [data-tab]:hover {
+    color: #6B4C32;
+    text-decoration: underline;
+}
+
+/* ---- Actor header inputs --------------------------------- */
+.mutant-year-zero.hindenburg .actor-header input {
+    color: #26211c;
+}
+
+/* ---- Item info expand rows ------------------------------- */
+.mutant-year-zero.hindenburg .item-info {
+    background-color: #E8D8B4;
+}
+
+/* ---- Rot indicator (remains visible as darker tint) ------ */
+.mutant-year-zero.hindenburg input.rot {
+    background-color: rgba(107, 76, 50, 0.15);
+    border-color: #8B6B4A;
+}

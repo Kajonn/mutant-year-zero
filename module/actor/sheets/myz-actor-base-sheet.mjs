@@ -95,6 +95,8 @@ export class MYZActorBaseSheet extends api.HandlebarsApplicationMixin(sheets.Act
     /** Create Left Click Menu */
 	async _onFirstRender(context, options) {
 		await super._onFirstRender(context, options)
+		// Add actor type as a CSS class for type-specific theming
+		this.element.classList.add(this.document.type);
 		// Right Click Context Menu for items
 		this._createContextMenu(this._getItemEditMenuOptions, ".item-edit", {
 			hookName: "getItemEditMenuOptions",

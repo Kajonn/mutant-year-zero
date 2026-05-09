@@ -15,8 +15,12 @@
         </div>
         <div class="row2 align-center">
             <div>
+                {{#ifCond actor.type "==" "hindenburg"}}
+                <input class="nolabel" name="system.rank" type="text" value="{{system.rank}}" placeholder="{{localize 'MYZ.RANK_FOR_HUMAN'}}" />
+                {{else}}
                 <input class="nolabel" name="system.rank" type="text" value="{{system.rank}}" placeholder="{{localize (toUpperCase (concat 'MYZ.RANK_FOR_'
                 system.creatureType))}}" />
+                {{/ifCond}}
             </div>
             <div>
                 <input class="nolabel" name="system.specificType" type="text" value="{{system.specificType}}" placeholder="{{localize (toUpperCase (concat 'MYZ.SPECIFIC_TYPE_FOR_' system.creatureType))}}" />

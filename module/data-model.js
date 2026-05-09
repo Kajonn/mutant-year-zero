@@ -21,6 +21,10 @@ class MYZActorDataModel extends foundry.abstract.TypeDataModel {
         grubRot: new SchemaField({ value: new NumberField({integer: false, min: 0, initial:0}) }),
         water: new SchemaField({ value: new NumberField({integer: false, min: 0, initial:0}) }),
         waterRot: new SchemaField({ value: new NumberField({integer: false, min: 0, initial:0}) }),
+        credits: new SchemaField({ value: new NumberField({integer: false, min: 0, initial:0}) }),
+        jyckar: new SchemaField({ value: new NumberField({integer: false, min: 0, initial:0}) }),
+        reloads: new SchemaField({ value: new NumberField({integer: false, min: 0, initial:0}) }),
+        epack: new SchemaField({ value: new NumberField({integer: false, min: 0, initial:0}) }),
         booze: new SchemaField({ value: new NumberField({integer: false, min: 0, initial:0}) }),
         bullets: new SchemaField({ value: new NumberField({integer: false, min: 0, initial:0}) })
       }),
@@ -342,6 +346,25 @@ export class MYZHumanDataModel extends MYZActorDataModel {
     };
   }
 }
+
+export class MYZHindenburgDataModel extends MYZActorDataModel {
+  static defineSchema() {
+    return {
+      ...super.defineSchema(),
+      // Hindenburg-specific defaults
+      description: new HTMLField({nullable: true, blank: true, initial: "<p>Hindenburg character</p>"}),
+      coreSkills: new ArrayField(new StringField({nullable: true, blank: true}), {initial: [
+        "ENDURE", "FORCE", "FIGHT", "SNEAK", "MOVE", "SHOOT", "SCOUT", "COMPREHEND", "KNOWTHEZONE", "SENSEEMOTION", "MANIPULATE", "HEAL"
+      ]}),
+      resource_points: new SchemaField({
+        label: new StringField({nullable: true, blank: true, initial: "MYZ.MUTATION_POINTS"}),
+        value: new NumberField({integer: true, min: 0, initial: 0}),
+        max: new NumberField({integer: true, min: 0, initial: 10})
+      }),
+    };
+  }
+}
+
 
 export class MYZNPCDataModel extends MYZActorDataModel {
   static defineSchema() {

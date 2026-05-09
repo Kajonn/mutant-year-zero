@@ -17,6 +17,11 @@
             {{#ifCond system.creatureType "==" "robot"}}
             {{> systems/mutant-year-zero/templates/actor/partials/character-chassis-armor.hbs}}
             {{/ifCond}}
+            {{#ifCond actor.type "==" "hindenburg"}}
+            <div>
+                {{> systems/mutant-year-zero/templates/actor/partials/character-gear.hbs}}
+            </div>
+            {{else}}
             <div class="gear-row grid grid-2col">
                 <div>
                     {{> systems/mutant-year-zero/templates/actor/partials/character-gear.hbs}}
@@ -25,6 +30,7 @@
                     {{> systems/mutant-year-zero/templates/actor/partials/character-artifacts.hbs}}
                 </div>
             </div>
+            {{/ifCond}}
         </div>
     </div>
 </section>

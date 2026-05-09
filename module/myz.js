@@ -18,7 +18,7 @@ import { MYZDieBase } from "./MYZDice.js";
 import { MYZDieSkill } from "./MYZDice.js";
 import { MYZDieGear } from "./MYZDice.js";
 import { MYZMutantDataModel, MYZAnimalDataModel, 
-    MYZRobotDataModel,  MYZHumanDataModel, MYZNPCDataModel, MYZArkDataModel, MYZVehicleDataModel, MYZSpaceshipDataModel,
+    MYZRobotDataModel,  MYZHumanDataModel,  MYZHindenburgDataModel, MYZNPCDataModel, MYZArkDataModel, MYZVehicleDataModel, MYZSpaceshipDataModel,
     MYZSkillDataModel, MYZAbilityDataModel, MYZTalentDataModel, MYZWeaponDataModel, MYZArmorDataModel, MYZChassisDataModel,
     MYZGearDataModel, MYZArtifactDataModel, MYZCriticalDataModel, MYZProjectDataModel} from "./data-model.js";
 
@@ -61,6 +61,7 @@ Hooks.once("init", async function () {
     CONFIG.Actor.dataModels.animal = MYZAnimalDataModel;
     CONFIG.Actor.dataModels.robot = MYZRobotDataModel;
     CONFIG.Actor.dataModels.human = MYZHumanDataModel;
+    CONFIG.Actor.dataModels.hindenburg = MYZHindenburgDataModel;
     CONFIG.Actor.dataModels.npc = MYZNPCDataModel;
     CONFIG.Actor.dataModels.ark = MYZArkDataModel;
     CONFIG.Actor.dataModels.vehicle = MYZVehicleDataModel;
@@ -111,6 +112,10 @@ Hooks.once("init", async function () {
     foundry.documents.collections.Actors.unregisterSheet("core", foundry.appv1.sheets.ActorSheet);
     foundry.documents.collections.Actors.registerSheet("mutant-year-zero", MYZCharacterSheet, {
         types: ["mutant"],
+        makeDefault: true,
+    });
+    foundry.documents.collections.Actors.registerSheet("mutant-year-zero", MYZCharacterSheet, {
+        types: ["hindenburg"],
         makeDefault: true,
     });
     foundry.documents.collections.Actors.registerSheet("mutant-year-zero", MYZCharacterSheet, {

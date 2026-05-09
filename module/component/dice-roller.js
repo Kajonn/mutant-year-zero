@@ -136,7 +136,7 @@ export class DiceRoller {
             const actor = await fromUuid(actorUuid);
             const itemId = message.getFlag("mutant-year-zero", "itemId") || null;
             // Deal trauma to characters and npcs
-            if(actor && actor.isOwner && ['mutant', 'animal', 'robot', 'human', 'npc'].includes(actor.type) &&
+            if(actor && actor.isOwner && ['mutant', 'hindenburg', 'animal', 'robot', 'human', 'npc'].includes(actor.type) &&
             game.settings.get("mutant-year-zero", "applyPushTrauma")){                
                 const attributeName = message.getFlag("mutant-year-zero", "attributeName");
                 const updateData = {};
